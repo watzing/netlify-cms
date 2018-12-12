@@ -4,7 +4,8 @@ import { WidgetPreviewContainer } from 'netlify-cms-ui-default';
 
 const ObjectPreview = ({ field }) => (
   <WidgetPreviewContainer>
-    {(field && field.get('fields')) || field.get('field') || null}
+    <div>{field.get('label', field.get('name'))}</div>
+    {(field && (field.get('types') || field.get('fields') || field.get('field'))) || null}
   </WidgetPreviewContainer>
 );
 
